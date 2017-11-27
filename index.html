@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SJZXH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/scroll.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            //----------------------轮播图-----------------------------------
+            var i=0;
+            var timer;
+            $(".lunbo img").eq(0).show().siblings().hide();
+            timer = setInterval(function () {
+                i++;
+                if (i==4){i=0}
+                $(".lunbo img").eq(i).fadeIn(300).siblings().fadeOut(300);
+            },2500)
+            $(".left").click(function () {
+                clearInterval(timer);
+                if(i==0){i=4}
+                i--
+                $(".lunbo img").eq(i).fadeIn(300).siblings().fadeOut(300);
+                timer = setInterval(function () {
+                    i++;
+                    if (i==4){i=0}
+                    $(".lunbo img").eq(i).fadeIn(300).siblings().fadeOut(300);
+                },2500)
+            })
+            $(".right").click(function () {
+                clearInterval(timer);
+                if(i==3){i=-1}
+                i++
+                $(".lunbo img").eq(i).fadeIn(300).siblings().fadeOut(300);
+                timer = setInterval(function () {
+                    i++;
+                    if(i==4){i=0}
+                    $(".lunbo img").eq(i).fadeIn(300).siblings().fadeOut(300);
+                },2500)
+            })
+            //-------------------------End--------------------------------------
+            //向上滚动
+             $('.scroll li:even').addClass('lieven');
+               $(function(){
+                $("div.scroll").myScroll({
+                    speed:40,
+                    rowHeight:35
+                })
+                 })  
+            //Tab 切换
+            $(".content-zy-tab-top li").mouseover(function () {
+                $(".content-zy-tab-top li").eq($(this).index()).addClass("tab-on").siblings().removeClass("tab-on");
+                $(".content-zy-tab-main div").hide().eq($(this).index()).show();
+                $(".content-zy-tab-tr span").eq($(this).index()).addClass("tab-span-on").siblings().removeClass("tab-span-on");
+            })
+			$(".ts-tab-top li").mouseover(function () {
+				$(".ts-tab-top li").eq($(this).index()).addClass("tab-on").siblings().removeClass("tab-on");
+//				$(".ts-tab-main div").hide().eq($(this).index()).show();
+                $(".ts-tab-main div").eq($(".ts-tab-top li").index(this)).addClass("ts-on").siblings().removeClass("ts-on")
+				$(".ts-tab-tr span").eq($(this).index()).addClass("tab-span-on").siblings().removeClass("tab-span-on");
+			})
+            $(".x-tab-top li").mouseover(function(){
+            	$(".x-tab-top li").eq($(this).index()).addClass("tab-on").siblings().removeClass("tab-on");
+            	$(".x-tab-main div").eq($(".x-tab-top li").index(this)).show().siblings().hide();
+            })
+            $(".footer-tab-t li").mouseover(function () {
+                $(".footer-tab-t li").eq($(this).index()).addClass("tab-on").siblings().removeClass("tab-on");
+                $(".footer-tab-m div").eq($(".footer-tab-t li").index(this)).show().siblings().hide();
+            })
+        })
+       
+    </script>
+</head>
+<body>
+     <div id="wrap">
+         <header>
+         <div id="top">
+             <div class="top-cont">
+                 <div class="top-l fl">
+                     <img src="images/tb_00.jpg" alt="">
+                    <span>欢迎您访问新华电脑学校唯一官方网站！</span>
+                     <span class="top-gw">官网</span>
+                 </div>
+                 <div class="top-r fr">
+                     <ul>
+                         <li><span>
+                             <img src="images/tb_01.jpg" alt="">
+                         </span><a href="#">手机网站</a>
+                             <span>|</span></li>
+                         <li><span>
+                             <img src="images/tb_02.jpg" alt="">
+                         </span><a href="#">官方空间</a>
+                         <span>|</span></li>
+                         <li><span>
+                             <img src="images/tb_03.jpg" alt="">
+                         </span><a href="#">官方微信</a>
+                         <span>|</span></li>
+                         <li><span>
+                             <img src="images/tb_04.jpg" alt="">
+                         </span><a href="#">联系我们</a></li>
+                     </ul>
+                 </div>
+             </div>
+         <div class="top-banner">
+             <div class="banner-t">
+                 <img src="images/cjxt.jpg" alt="">
+             </div>
+             <div class="banner-b">
+                 <span><img src="images/logo.jpg" alt=""></span>
+                 <span class="span-c"><img src="images/logo_01.jpg" alt=""></span>
+                 <span class="span-r"><img src="images/logo_02.jpg" alt=""></span>
+             </div>
+         </div>
+             <div class="nav">
+                     <ul>
+                         <li><a href="">网站首页</a></li>
+                         <li><a href="">学校介绍</a></li>
+                         <li><a href="">新闻中心</a></li>
+                         <li><a href="">校园风光</a></li>
+                         <li><a href="">专业设置</a></li>
+                         <li><a href="">名师风采</a></li>
+                         <li><a href="">就业保障</a></li>
+                         <li><a href="">学生作品</a></li>
+                         <li><a href="">网上报名</a></li>
+                     </ul>
+             </div>
+                <div class="top-ban">
+                    <div class="lunbo">
+                        <img src="images/1.jpg" alt="">
+                        <img src="images/2.jpg" alt="">
+                        <img src="images/3.jpg" alt="">
+                        <img src="images/4.jpg" alt="">
+                    </div>
+                    <div class="left">
+                        <img src="images/left.png" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="images/right.png" alt="">
+                    </div>
+                </div>
+         </div>
+         </header>
+         <section>
+             <div class="content-box">
+                 <div class="box1">
+                     <li class="box1-top">
+                         <h1>互联网+创客专业</h1></li>
+                     <li class="box-content"><a href="">天猫运营与淘宝创业专业</a>
+                     <span class="box-but"><a href="">点击咨询</a></span>
+                     </li>
+                     <li class="box-content"><a href="">互联网运营与创客专业</a>
+                         <span class="box-but"><a href="">点击咨询</a></span></li>
+                     <li class="box-content"><a href="">互联网+跨境电商专业</a>
+                         <span class="box-but"><a href="">点击咨询</a></span></li>
+                 </div>
+                 <div class="box2">
+                     <li class="box2-top">
+                         <h1>互联网+设计专业</h1></li>
+                     <li class="box2-content"><a href="">新媒体UI界面高级设计师</a>
+                         <span class="box-but2"><a href="">点击咨询</a></span>
+                     </li>
+                     <li class="box2-content"><a href="">动漫游戏高级设计师专业</a>
+                         <span class="box-but2"><a href="">点击咨询</a></span></li>
+                     <li class="box2-content"><a href="">数字艺术设计专业</a>
+                         <span class="box-but2"><a href="">点击咨询</a></span></li>
+                     <li class="box2-content"><a href="">环境数字艺术创意高级设计</a>
+                         <span class="box-but2"><a href="">点击咨询</a></span></li>
+                 </div>
+                 <div class="box3">
+                     <li class="box3-top">
+                         <h1>互联网+设计专业</h1></li>
+                     <li class="box3-content"><a href="">软件开发高级工程师专业</a>
+                         <span class="box-but3"><a href="">点击咨询</a></span>
+                     </li>
+                     <li class="box3-content"><a href="">网络传媒高级工程师专业</a>
+                         <span class="box-but3"><a href="">点击咨询</a></span></li>
+                     <li class="box3-content"><a href="">VR数字媒体设计师专业</a>
+                         <span class="box-but3"><a href="">点击咨询</a></span></li>
+                 </div>
+                 <div id="box-bottom">
+                     郑重声明：近日，一些不法之徒以“新华电脑”名义在河北境内进行虚假招生。在此我校郑重声明，石家庄新华电脑学校仅此一家，欢迎广大学生及家长来校参观！
+                 </div>
+             </div>
+
+             <div class="content-table">
+                <p style="color: #00aee3; font-size: 1.2em;font-weight: bold;padding-left: 20px;height:40px;
+                background-color: #FFFFFF;line-height: 40px">2017年春季<span style="color:red;">热门专业限额报名</span>正式启动</p>
+                 <ul class="col-1">
+                     <li class="row-1">热门专业</li>
+                     <li class="row-2">校企合作</li>
+                     <li class="row-3">限定名额</li>
+                     <li class="row-4">已报名</li>
+                     <li class="row-5">毕业可获得</li>
+                     <li class="row-6">助学计划</li>
+                     <li class="row-7">限时报名</li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">天猫运营与淘宝创业
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">新媒体UI界面设计
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">动漫游戏高级设计师
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">互联网运营与创客
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">环境数字艺术创意设计
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+                 <ul class="col-2 col-1">
+                     <li class="row-1">网络传媒工程师
+                         <span><img src="images/re.gif" alt=""></span></li>
+                     <li class="row-2">石家庄途上电子商务有限公司</li>
+                     <li class="row-3">40人</li>
+                     <li class="row-4">36人</li>
+                     <li class="row-5">技能+大专学历</li>
+                     <li class="row-6">车费报销 免费邮寄入学指南</li>
+                     <li class="row-7"><span style="color: #f39205;">限时报名</span></li>
+                 </ul>
+             </div>
+             <div class="content-zoujin">
+                 <div class="content-z-l">
+                     <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                         <span style="border: 2px solid #00A0E8;margin-right: 20px;"></span>走进新华</p>
+                     <img class="content-z-l-pic" src="images/ys7.jpg" alt="">
+                 </div>
+                 <div class="content-z-c">
+                 <div class="bcon">
+                      <p style="font-size: 1.4em;line-height: 66px;">新生报名动态</p>
+                     <div class="tit"><span class="span-t-1">姓名</span><span class="span-t-2">籍贯</span>
+                         <span class="span-t-3">专业</span><span class="span-t-4">现在报名享受优惠</span></div>
+                     <div class="scroll">
+                             <ul>
+                                 <li><span class="span-t-1">王子叶</span><span class="span-t-2">沧州任丘</span><span class="span-t-5">报读互联网运营与创客</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">张子恒</span><span class="span-t-2">石家庄市</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">李可鑫</span><span class="span-t-2">邯郸永年</span><span class="span-t-5">报读天猫运营与淘宝创业</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">齐子昂</span><span class="span-t-2">石家庄辛集</span><span class="span-t-5">报读软件开发高级开发工程师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">闫静超</span><span class="span-t-2">唐山滦县</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">李泽江</span><span class="span-t-2">沧州任丘</span><span class="span-t-5">报读环境数字艺术创意设计</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">谷欣欣</span><span class="span-t-2">邯郸曲周</span><span class="span-t-5">报读数字艺术设计</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">冯前</span><span  class="span-t-2">石家庄辛集</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">王子叶</span><span class="span-t-2">沧州任丘</span><span class="span-t-5">报读互联网运营与创客</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">张子恒</span><span class="span-t-2">石家庄市</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">李可鑫</span><span class="span-t-2">邯郸永年</span><span class="span-t-5">报读天猫运营与淘宝创业</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">齐子昂</span><span class="span-t-2">石家庄辛集</span><span class="span-t-5">报读软件开发高级开发工程师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">闫静超</span><span class="span-t-2">唐山滦县</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">李泽江</span><span class="span-t-2">沧州任丘</span><span class="span-t-5">报读环境数字艺术创意设计</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">谷欣欣</span><span class="span-t-2">邯郸曲周</span><span class="span-t-5">报读数字艺术设计</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                                 <li><span class="span-t-1">冯前</span><span  class="span-t-2">石家庄辛集</span><span class="span-t-5">报读动漫游戏高级设计师</span><a href=""><span class="span-zixun">立即咨询</span></a></li>
+                             </ul>
+                         </div>
+                </div>
+                 </div>
+                 <div class="content-z-r">
+                     <p style="font-size: 1.2em;line-height: 66px;">学什么好就业，首选新华电脑学校</p>
+                     <ul>
+                         <li><a href=""><img src="images/zxtd_01.jpg" alt=""></a></li>
+                         <li><a href=""><img src="images/zxtd_02.jpg" alt=""></a></li>
+                         <li><a href=""><img src="images/zxtd_03.jpg" alt=""></a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="content-zhuanye">
+                <div class="content-z-l">
+                    <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                        <span class="con-l-span"></span>
+                        专业设置</p>
+                    <img src="images/yh_01.jpg" alt="">
+                </div>
+                 <div class="content-zy-r">
+                    <div class="content-zy-tab">
+                        <div class="content-zy-tab-top">
+                            <ul>
+                                <li class="tab-on">初中起点专业</li>
+                                <li>高中起点专业</li>
+                                <li>高端精品培训</li>
+                                <li>VIP短期培训</li>
+                            </ul>
+                            <div class="content-zy-tab-tr ">
+                                <p>
+                                    <span class="tab-span-on">初中毕业学什么好？</span>
+                                    <span>高中毕业如何选学校？</span>
+                                    <span>大学毕业需提升技能？</span>
+                                    <span>1V1VIP培训助你蜕变！</span>
+                                </p>
+                                <a style="color: #000;" href="#">更多>></a>
+                            </div>
+                        </div>
+
+                        <div class="content-zy-tab-main cf">
+                            <div style="display: block;">
+                                <ul>
+                                    <li>
+                                        <img src="images/zy_01.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            网络传媒高级工程师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：12500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_02.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                           新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_03.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            互联网运营与创客</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：92500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_04.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            动漫游戏高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：10</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                              <ul>
+                                  <li>
+                                      <img src="images/zy_05.jpg" alt="">
+                                      <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                          新媒体UI界面高级设计师</p>
+                                      <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                          关注量：82500</p>
+                                  </li>
+                                  <li>
+                                      <img src="images/zy_06.jpg" alt="">
+                                      <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                          新媒体UI界面高级设计师</p>
+                                      <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                          关注量：82500</p>
+                                  </li>
+                                  <li>
+                                      <img src="images/zy_07.jpg" alt="">
+                                      <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                          新媒体UI界面高级设计师</p>
+                                      <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                          关注量：82500</p>
+                                  </li>
+                                  <li>
+                                      <img src="images/zy_08.jpg" alt="">
+                                      <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                          新媒体UI界面高级设计师</p>
+                                      <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                          关注量：82500</p>
+                                  </li>
+                              </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <img src="images/zy_09.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_10.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_11.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_12.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <img src="images/zy_13.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_14.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_15.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/zy_16.jpg" alt="">
+                                        <p style="color: #000; font-size: 0.8em;line-height: 40px">
+                                            新媒体UI界面高级设计师</p>
+                                        <p style="color: #a09f9f;font-size: 0.7em;line-height: 30px">
+                                            关注量：82500</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+             <div class="content-tushuo">
+                 <div class="content-ts-l">
+                     <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                         <span class="con-l-span"></span>图说新华
+                         <span><a style=" font-size: 0.6em;color: #444;margin-left: 90px;"  href="#">更多>></a></span>
+                     </p>
+                     <a href="#"> <img src="images/tsxh.jpg" alt=""></a>
+                     <div class="content-ts-text">
+                         《老师来了》 《我去上学了》<br>
+                         2016级新生军训汇演 <br>
+                         迎新生庆国庆文艺晚会
+                     </div>
+                 </div>
+                 <div class="content-ts-r ">
+                     <div class="content-ts-tab">
+                         <div class="ts-tab-top ">
+                             <ul>
+                                 <li class="tab-on">校园环境</li>
+                                 <li>校园生活</li>
+                                 <li>精彩活动</li>
+                                 <li>实训环境</li>
+                             </ul>
+                             <div class="ts-tab-tr ">
+                                 <p>
+                                     <span class="tab-span-on">优美的校园环境给我们提供了很好的学习环境！</span>
+                                     <span>丰富的校园生活让我们每天都很快乐！</span>
+                                     <span>精彩的校园活动，带给我们充实和快乐！</span>
+                                     <span>华丽的实训环境，带给我们艺术的魅力！</span>
+                                 </p>
+                                 <a style="color: #000;" href="#">更多>></a>
+                             </div>
+                         </div>
+                         <div class="ts-tab-main">
+                             <div class="ts-on">
+                                 <ul class="ts-tab-t">
+                                     <span style="width: 569px;height: 288px;position: relative"><a href="#"><img src="images/xyfg_01.jpg" alt="">
+                                      <p class="tab-b-text">校园环境</p>
+                                     </a></span>
+                                     <span style="width: 277px;height: 288px;margin-left: 5px;"><a href="#"> <img src="images/xyfg_02.jpg" alt="">
+                                     <p class="tab-b-text">校园环境</p>
+                                     </a></span>
+                                 </ul>
+                                 <ul class="ts-tab-b">
+                                     <span><a href="#"><img src="images/xyfg_03.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                     <span><a href="#"><img src="images/xyfg_04.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                     <span><a href="#"><img src="images/xyfg_05.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                 </ul>
+                             </div>
+
+
+                                 <div class="ts-on">
+                                     <ul class="ts-tab-t">
+                                     <span style="width: 569px;height: 288px;position: relative"><a href="#"><img src="images/xysh_01.jpg" alt="">
+                                      <p class="tab-b-text">校园生活</p>
+                                     </a></span>
+                                         <span style="width: 277px;height: 288px;margin-left: 5px;"><a href="#"> <img src="images/xysh_02.jpg" alt="">
+                                     <p class="tab-b-text">校园生活</p>
+                                     </a></span>
+                                     </ul>
+                                     <ul class="ts-tab-b">
+                                         <span><a href="#"><img src="images/xysh_03.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/xysh_04.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/xysh_05.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                     </ul>
+                                 </div>
+
+                                 <div class="ts-on">
+                                     <ul class="ts-tab-t">
+                                     <span style="width: 569px;height: 288px;position: relative"><a href="#"><img src="images/jchd_01.jpg" alt="">
+                                      <p class="tab-b-text">精彩活动</p>
+                                     </a></span>
+                                         <span style="width: 277px;height: 288px;margin-left: 5px;"><a href="#"> <img src="images/jchd_02.jpg" alt="">
+                                     <p class="tab-b-text">精彩活动</p>
+                                     </a></span>
+                                     </ul>
+                                     <ul class="ts-tab-b">
+                                         <span><a href="#"><img src="images/jchd_03.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/jchd_04.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/jchd_05.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                     </ul>
+                                 </div>
+
+                                 <div class="ts-on">
+                                     <ul class="ts-tab-t">
+                                     <span style="width: 569px;height: 288px;position: relative"><a href="#"><img src="images/sxhj_01.jpg" alt="">
+                                      <p class="tab-b-text">实训环境</p>
+                                     </a></span>
+                                         <span style="width: 277px;height: 288px;margin-left: 5px;"><a href="#"> <img src="images/sxhj_02.jpg" alt="">
+                                     <p class="tab-b-text">实训环境</p>
+                                     </a></span>
+                                     </ul>
+                                     <ul class="ts-tab-b">
+                                         <span><a href="#"><img src="images/sxhj_03.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/sxhj_04.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                         <span><a href="#"><img src="images/sxhj_05.jpg" alt=""><p class="tab-b-text">校园环境</p></a></span>
+                                     </ul>
+                                 </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="content-xinsheng">
+                 <div class="content-x-l">
+                     <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                         <span class="con-l-span"></span>新生故事
+                         <span><a style=" font-size: 0.6em;color: #444;margin-left: 90px;" href="#">更多>></a></span>
+                     </p>
+                     <a href="#"> <img src="images/xsgs.jpg" alt=""></a>
+                     <div class="content-x-text">
+                         【新生故事】梦想的舞台<br>
+                         <p>苗春艺，石家庄栾城，初中毕业，选择学技术一点也不后悔，因为从入学这段......</p>
+                     </div>
+                 </div>
+                 <div class="content-x-c">
+                         <div class="x-tab-top">
+                             <ul>
+                                 <li>学校新闻</li>
+                                 <li>行业新闻</li>
+                                 <li>就业新闻</li>
+                             </ul>
+                             <a style=" font-size: 0.9em;color: #444;margin-left: 180px;font-weight: bold;
+                             line-height: 66px;" href="">更多>></a>
+                         </div>
+                         <div class="x-tab-main">
+                             <div>
+                                 <ul>
+                                     <li>
+                                         <img src="images/81-1F3201021520-L.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">2017年已到春分，学技术要趁早</span>
+                                         <p>2017年3月20日，农历二月二十三日，是一年的春分时节。这个时节是人们最喜欢的节气，也是大地春......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81-1F31GI0550-L.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">“年轻，就要这个范儿”创意自拍秀已</span>
+                                         <p>3月，花开浪漫的季节；3月，谱写青春序曲的时光；3月，只属于新生的开学季。为了营造温馨和谐的......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81-1F3151FP80-L.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">教学社团纳新啦！新生们快到碗里来！</span>
+                                         <p>社团是一个梦想的集结号，社团有一群快乐的先行者。石家庄新华电脑学校为了促进学生实践能力，开......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81-1F31GF5100-L.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">企业初印象：有了这样的工作环境，我</span>
+                                         <p>3月13日，石家庄新华电脑学校的一批优秀毕业生进驻天津天津华庭装饰工程有限公司。创就业指导中......</p>
+                                     </li>
+                                 </ul>
+                             </div>
+                             <div>
+                                 <ul>
+                                     <li>
+                                         <img src="images/81_170320144752_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">2017年已到春分，学技术要趁早</span>
+                                         <p>2017年3月20日，农历二月二十三日，是一年的春分时节。这个时节是人们最喜欢的节气，也是大地春......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170317173533_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">“年轻，就要这个范儿”创意自拍秀已</span>
+                                         <p>3月，花开浪漫的季节；3月，谱写青春序曲的时光；3月，只属于新生的开学季。为了营造温馨和谐的......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170316095016_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">教学社团纳新啦！新生们快到碗里来！</span>
+                                         <p>社团是一个梦想的集结号，社团有一群快乐的先行者。石家庄新华电脑学校为了促进学生实践能力，开......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170316094634_1-lp.png" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">企业初印象：有了这样的工作环境，我</span>
+                                         <p>3月13日，石家庄新华电脑学校的一批优秀毕业生进驻天津天津华庭装饰工程有限公司。创就业指导中......</p>
+                                     </li>
+                                 </ul>
+                             </div>
+                             <div>
+                                 <ul>
+                                     <li>
+                                         <img src="images/81_170320145617_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">2017年已到春分，学技术要趁早</span>
+                                         <p>2017年3月20日，农历二月二十三日，是一年的春分时节。这个时节是人们最喜欢的节气，也是大地春......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170314085655_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">“年轻，就要这个范儿”创意自拍秀已</span>
+                                         <p>3月，花开浪漫的季节；3月，谱写青春序曲的时光；3月，只属于新生的开学季。为了营造温馨和谐的......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170310082546_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">教学社团纳新啦！新生们快到碗里来！</span>
+                                         <p>社团是一个梦想的集结号，社团有一群快乐的先行者。石家庄新华电脑学校为了促进学生实践能力，开......</p>
+                                     </li>
+                                     <li>
+                                         <img src="images/81_170307091123_1-lp.jpg" alt=""/>
+                                         <span style="margin-left: 20px;font-weight: bold;line-height: 30px;">企业初印象：有了这样的工作环境，我</span>
+                                         <p>3月13日，石家庄新华电脑学校的一批优秀毕业生进驻天津天津华庭装饰工程有限公司。创就业指导中......</p>
+                                     </li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                 </div>
+                 <div class="content-t-r">
+                     <p style="font-size: 1.5em;font-weight: bold; color: #666;line-height: 66px">
+                         焦点话题
+                         <span><a style=" font-size: 0.6em;color: #444;margin-left: 90px; href="#">更多>></a></span>
+                     </p>
+                     <a href=""><img src="images/zt_01.jpg" alt=""></a>
+                     <a href=""><img src="images/zt_02.jpg" alt=""></a>
+                     <a href=""><img src="images/zt_03.jpg" alt=""></a>
+                 </div>
+             </div>
+             <div class="content-xuexizx ">
+                 <div class="content-x-l ">
+                     <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                         <span class="con-l-span"></span>学习之星
+                         <span><a href="#" style=" font-size: 0.6em;color: #444;margin-left: 90px;">更多>></a></span>
+                     </p>
+                     <a href="#"> <img src="images/xxzx_01.jpg" alt=""></a>
+                     <div class="content-t-text">
+                         <h3 style="color:#444;">赵子墨</h3>
+                         班级：16天猫1   指导老师：张春芳<br>
+                         课程:OA &nbsp &nbsp 项目:杂志设计
+                     </div>
+                 </div>
+                 <div class="content-x-r ">
+                     <p style="font-size: 1.2em; color: #666;line-height: 66px">
+                         宝剑不磨要生锈，人不学习要落后，让我们一起争做学习之星吧！
+                         <span><a href="#" style=" font-size: 0.8em;color: #444;margin-left: 230px;font-weight: bold;" >更多>></a></span>
+                         </p>
+                     <a href=""><img src="images/xxzx_02.jpg" alt=""></a>
+                     <a href=""><img src="images/xxzx_03.jpg" alt=""></a>
+                     <a href=""><img src="images/xxzx_04.jpg"alt=""></a>
+                     <a href=""><img src="images/xxzx_05.jpg" alt=""></a>
+                     <a href=""><img src="images/xxzx_06.jpg" alt=""></a>
+                     <a href=""><img src="images/xxzx_07.jpg"alt=""></a>
+                 </div>
+             </div>
+             <div class="content-jiuye">
+                 <div class="content-j-l">
+                     <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                         <span class="con-l-span"></span>就业之星
+                         <span><a style=" font-size: 0.6em;color: #444;margin-left: 90px; href="#">更多>></a></span>
+                     </p>
+                     <a href="#"> <img src="images/jyzx_01.jpg" alt=""></a>
+                     <div class="content-t-text" style="margin-left: 20px;width: 271px;">
+                         <h3 style="color:#444;">马世博</h3>
+                         就业单位：北京华大肾安医院<br>
+                         担任职位：网络运营主管
+                     </div>
+                 </div>
+                 <div class="content-j-r">
+                     <p style="font-size: 1.2em; color: #666;line-height: 68px">
+                         每个成功者都有一个开始，走进新华，才能找到成功的路！
+                         <span><a style=" font-size: 0.8em;font-weight: bold;color: #444;margin-left: 300px; href="#">更多>></a></span>
+                     </p>
+                    <div class="content-j-main">
+                        <a href="#"> <img style="margin-left: 0;" src="images/jyzx_02.jpg" alt=""></a>
+                        <div class="content-t-text">
+                            <h3 style="color:#444;">安宁</h3>
+                            就业单位：石家庄龙发装饰公司<br>
+                            担任职位：市场运营部经理
+                        </div>
+                    </div>
+                     <div class="content-j-main">
+                         <a href="#"> <img src="images/jyzx_03.jpg" alt=""></a>
+                         <div class="content-t-text">
+                             <h3 style="color:#444;">袁宏迪</h3>
+                             就业单位：石家庄途商电子商务公司<br>
+                             担任职位：总经理
+                         </div>
+                     </div>
+                     <div class="content-j-main">
+                         <a href="#"> <img src="images/jyzx_04.jpg" alt=""></a>
+                         <div class="content-t-text">
+                             <h3 style="color:#444;">魏依娜</h3>
+                             就业单位：石家庄微云电子商务公司<br>
+                             担任职位：运营部经理
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="content-baoming">
+                 <p style="font-size: 1.5em;font-weight: bold;line-height: 66px">
+                     <span class="con-l-span"></span>各专业火热报名中
+                 </p>
+                 <a href=""><img src="images/zxtd_04.jpg" alt=""></a>
+                 <a href=""><img src="images/zxtd_05.jpg" alt=""></a>
+                 <a href=""><img src="images/zxtd_06.jpg" alt=""></a>
+                 <a href=""><img src="images/zxtd_07.jpg" alt=""></a>
+             </div>
+             <div class="content-bottom">
+               <div class="footer-tab-t">
+                   <div class="footer-left">
+                       <span style="border: 2px solid #3dafe9;height: 24px;display: inline-block;margin-top: 18px;"></span>
+                   </div>
+                   <ul>
+                       <li>合作企业</li>
+                       <li>全国分校</li>
+                   </ul>
+               </div>
+                 <div class="footer-tab-m">
+                     <div>
+                         <img src="images/hzqy_01.jpg" alt="">
+                         <img src="images/hzqy_02.jpg" alt="">
+                         <img src="images/hzqy_03.jpg" alt="">
+                         <img src="images/hzqy_04.jpg" alt="">
+                         <img src="images/hzqy_05.jpg" alt="">
+                         <img src="images/hzqy_06.jpg" alt="">
+                         <img src="images/hzqy_07.jpg" alt="">
+                     </div>
+                     <div>
+                         <p>
+                             <span><a href="">石家庄新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>
+                         </p>
+                         <p>
+                             <span><a href="">石家庄新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>|
+                             <span><a href="">南京新华电脑学校</a></span>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <footer>
+             <div class="foot-top">
+                 <ul>
+                     <li><a href="#">网站首页</a></li>
+                     <li><a href="#">学校首页</a></li>
+                     <li><a href="#">新闻中心</a></li>
+                     <li><a href="#">校园风光</a></li>
+                     <li><a href="#">专业设置</a></li>
+                     <li><a href="#">名师风采</a></li>
+                     <li><a href="#">杰出校友</a></li>
+                     <li><a href="#">学生作品</a></li>
+                     <li><a href="#">就业保障</a></li>
+                     <li><a href="#">网上报名</a></li>
+                 </ul>
+                 <img src="images/bottom.jpg" alt="">
+             </div>
+             <div class="foot-bottom">
+                 河北省内专业的互联网教育专家。学校地址：河北省石家庄市桥西区南二环西路199号，南二环与红旗大街交叉口西行300米路北<br>
+                 咨询QQ：8000 82599<br>
+                 咨询电话：0311-85232888<br>
+                 冀ICP备11012044号 版权所有：北京朗杰科技有限公司<br>
+                 网站声明：任何企业或者个人以任何形式复制或传递本网站所载述的域名商标、文字、视像及声音内容、图形及图像应当注明来源于本网站
+             </div>
+         </footer>
+     </div>
+</body>
+</html>
